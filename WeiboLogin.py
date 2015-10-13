@@ -19,12 +19,12 @@ class WeiboLogin:
         self.loginUrl = "http://login.sina.com.cn/sso/login.php?client=ssologin.js(v1.4.18)"
         self.postHeader = {'User-Agent': 'Mozilla/5.0 (X11; Linux i686; rv:24.0) Gecko/20140611 Firefox/24.0 Iceweasel/24.6.0'}
 
-    def Login(self):
-        "登陆程序"
+        def Login(self):
+            "登陆程序"
         self.EnableCookie(self.enableProxy)#cookie或代理服务器配置
-            serverTime, nonce, pubkey, rsakv = self.GetServerTime()#登陆的第一步
-            postData = WeiboEncode.PostEncode(self.userName, self.passWord, serverTime, nonce, pubkey, rsakv)#加密用户和密码
-            #print "Post data length:\n", len(postData)
+        serverTime, nonce, pubkey, rsakv = self.GetServerTime()#登陆的第一步
+        postData = WeiboEncode.PostEncode(self.userName, self.passWord, serverTime, nonce, pubkey, rsakv)#加密用户和密码
+        #print "Post data length:\n", len(postData)
 
         req = urllib2.Request(self.loginUrl, postData, self.postHeader)
             #print "Posting request..."
@@ -36,6 +36,9 @@ class WeiboLogin:
         except:
             print 'Login error!'
             return False
+
+        #print 'Login sucess!'
+        return True
 
         #print 'Login sucess!'
         return True
