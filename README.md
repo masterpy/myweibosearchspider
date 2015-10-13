@@ -6,6 +6,7 @@
 
 #时间:2015年10月13日16:58:58
 修改完全部错误并可以运行..
+
 说明:
     main.py         主文件
     Matcher.py      解析html
@@ -17,3 +18,5 @@
 
 参考:http://www.07net01.com/2014/09/70628.html
     http://liandesinian.blog.51cto.com/7737219/1549701
+
+狗日的编码问题
