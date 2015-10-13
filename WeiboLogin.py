@@ -5,10 +5,7 @@ import cookielib
 import WeiboEncode
 import WeiboSearch
 
-if __name__ == '__main__':
-    weibologin = WeiboLogin('xxxxxxx', 'xxxxxx')#用户名、密码
-    if weibologin.Login() == True:
-        print "登陆成功！"
+
 
 class WeiboLogin:
     def __init__(self, user, pwd, enableProxy = False):
@@ -73,3 +70,9 @@ class WeiboLogin:
         except:
             print 'Get server time & nonce error!'
             return None
+
+
+if __name__ == '__main__':
+    weibologin = WeiboLogin('xxxxxxx', 'xxxxxx')#用户名、密码
+    if weibologin.Login() == True:
+        print "登陆成功！"
